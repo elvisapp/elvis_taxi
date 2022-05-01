@@ -1,7 +1,7 @@
-import 'package:elvis_taxi/pages/home/home_page.dart';
-import 'package:elvis_taxi/pages/login/login_page.dart';
+import 'package:elvis_taxi/src/pages/home/home_page.dart';
+import 'package:elvis_taxi/src/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
-import 'package:elvis_taxi/utils/colors.dart' as utils;
+//import 'package:elvis_taxi/src/utils/colors.dart' as utils;
 
 void main() {
  runApp( MyApp());
@@ -25,9 +25,8 @@ class _MyAppState extends State<MyApp> {
         fontFamily: 'NimbusSans',
         appBarTheme: AppBarTheme(
           backgroundColor: Color(0xFF222327),
-          elevation: 0,
+          elevation: 0
         ),
-
       ),
       routes: {
         'home' : (BuildContext context) => HomePage(),

@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:elvis_taxi/pages/home/home_controller.dart';
+import 'package:elvis_taxi/src/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
