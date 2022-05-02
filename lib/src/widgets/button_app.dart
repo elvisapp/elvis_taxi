@@ -10,11 +10,13 @@ class ButtonApp extends StatelessWidget {
   Color textColor;
   String text;
   IconData icon;
+  Function onPressed;
 
   ButtonApp({
     this.color = Colors.black,
     this.textColor = Colors.white,
     this.icon = Icons.arrow_forward_ios,
+    this.onPressed,
     @required this.text//texto obligatorio
 
 });
@@ -23,7 +25,9 @@ class ButtonApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-        onPressed: () {},
+        onPressed: () {
+          onPressed();
+        },
         color: color,
         textColor: textColor,
       child: Stack(

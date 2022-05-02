@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "111689165367",
+    "project_id": "elvis-taxi",
+    "storage_bucket": "elvis-taxi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111689165367:android:3fe9cc5041b14d88e76db2",
+        "android_client_info": {
+          "package_name": "com.elvis.taxivz.elvis_taxi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111689165367-q9em1ecucnpiosaj0vn7cjp3cj9gs16v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.elvis.taxivz.elvis_taxi",
+            "certificate_hash": "724733b929a66e184fe1ac94de8a3418f8859eae"
+          }
+        },
+        {
+          "client_id": "111689165367-834p2ii7e8tutctjb2km67lmvva591ge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGbdJHC8Rd-4lQ0W-IgADYDL0xMMC-UMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111689165367-834p2ii7e8tutctjb2km67lmvva591ge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

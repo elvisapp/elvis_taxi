@@ -1,17 +1,19 @@
 import 'package:elvis_taxi/src/pages/home/home_page.dart';
 import 'package:elvis_taxi/src/pages/login/login_page.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 //import 'package:elvis_taxi/src/utils/colors.dart' as utils;
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
  runApp( MyApp());
 }
 
 class MyApp extends StatefulWidget {
   //const MyApp({Key? key}) : super(key: key);
-
   @override
-  State<MyApp> createState() => _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {

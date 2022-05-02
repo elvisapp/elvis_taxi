@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
+import 'package:elvis_taxi/src/pages/login/login_controller.dart';
 import 'package:elvis_taxi/src/widgets/button_app.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 //import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
@@ -9,27 +11,45 @@ import 'package:elvis_taxi/src/utils/colors.dart' as utils;
 
 class LoginPage extends StatefulWidget {
   //const LoginPage({Key? key}) : super(key: key);
-
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
+
 class _LoginPageState extends State<LoginPage> {
+
+  LoginController _con = new LoginController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    print('INIT STATE');
+    
+    SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
+      _con.init(BuildContext);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    print('METODO BUILD');
+
     return Scaffold(
       appBar: AppBar(), //raya superior
-      body: Column(
-        children:[
-         _bannerApp(),
-          _textDescription(),
-          _textLogin(),
-          Expanded(child: Container(),),
-          _textFieldEmail(),
-          _textFieldPassword(),
-          _buttonLogin(),
-          _textDontHaveAccount()
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children:[
+           _bannerApp(),
+            _textDescription(),
+            _textLogin(),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.17),
+            _textFieldEmail(),
+            _textFieldPassword(),
+            _buttonLogin(),
+            _textDontHaveAccount()
+          ],
+        ),
       ),
     );
   }
@@ -56,6 +76,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 30, vertical: 25),
       child: ButtonApp(
+        onPressed: _con.login,
         text: 'Iniciar sesion',
         color: utils.Colors.taxiColor,
         textColor: Colors.white,
@@ -68,6 +89,7 @@ class _LoginPageState extends State<LoginPage> {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 30),
       child: TextField(
+        controller: _con.emailController,
         decoration: InputDecoration(
           hintText: 'correo@gmail.com',
           labelText: 'Correo electronico',
@@ -87,6 +109,7 @@ class _LoginPageState extends State<LoginPage> {
       margin: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
       child: TextField(
         obscureText: true, //metodo para esconder lo que se escribe
+        controller: _con.passwordController,
         decoration: InputDecoration(
           labelText: 'Contraseña',
           suffixIcon: Icon( // iconos recuerdas que hay varios

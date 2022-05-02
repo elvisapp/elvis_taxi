@@ -1,5 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.elvis.taxivz.elvis_taxi">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
    <application
         android:label="elvis_taxi"
         android:name="${applicationName}"
